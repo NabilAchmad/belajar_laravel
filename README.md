@@ -1,152 +1,102 @@
-PerpusKita - Aplikasi Perpustakaan Online Modern
-PerpusKita adalah aplikasi web manajemen perpustakaan yang dibangun menggunakan Laravel 11. Aplikasi ini dirancang dengan antarmuka yang modern, bersih, dan responsif, serta dilengkapi dengan fitur-fitur esensial untuk mengelola koleksi buku dan transaksi peminjaman.
+📚 PerpusKita — Aplikasi Perpustakaan Online Modern
+PerpusKita adalah aplikasi web manajemen perpustakaan berbasis Laravel 11 dengan antarmuka modern, bersih, dan responsif. Dirancang untuk mempermudah pengelolaan koleksi buku dan transaksi peminjaman, aplikasi ini menggabungkan kemudahan penggunaan dengan tampilan profesional.
 
-✨ Fitur Utama
-Otentikasi Pengguna: Sistem registrasi dan login yang aman menggunakan Laravel Breeze.
+✨ Fitur Unggulan
+🔐 Otentikasi & Keamanan
+Sistem registrasi & login aman menggunakan Laravel Breeze.
 
-Manajemen Peran (Role-Based Access Control):
+Role-Based Access Control:
 
-Member: Dapat menjelajahi katalog, meminjam & mengembalikan buku, dan melihat riwayat pinjaman pribadi.
+Member → Menjelajahi katalog, meminjam & mengembalikan buku, melihat riwayat pinjaman.
 
-Staff: Memiliki hak akses seperti Admin untuk mengelola buku (tambah, edit).
+Staff → Mengelola koleksi buku (Tambah/Edit).
 
-Admin: Akses penuh untuk mengelola buku (CRUD), dan memonitor semua transaksi peminjaman yang sedang aktif dari seluruh member.
+Admin → Akses penuh (CRUD Buku, monitoring seluruh transaksi).
 
-Katalog Buku (CRUD):
+📚 Manajemen Katalog Buku (CRUD)
+Tambah, edit, dan hapus koleksi buku.
 
-Admin & Staff dapat menambah, mengedit, dan menghapus koleksi buku.
+Upload gambar sampul yang disimpan secara lokal.
 
-Fitur upload gambar sampul buku yang disimpan secara lokal.
+Tampilan grid view menarik & informatif.
 
-Tampilan daftar buku dalam format grid yang menarik.
+🔄 Sistem Peminjaman Buku
+Logika otomatis saat meminjam & mengembalikan buku.
 
-Sistem Peminjaman:
+Status peminjaman jelas: Dipinjam, Sudah Kembali, Terlambat.
 
-Logika untuk meminjam buku (mengurangi stok) dan mengembalikan buku (menambah stok kembali).
+📊 Panel Khusus
+Member → Halaman Pinjaman Saya.
 
-Status peminjaman yang jelas (Dipinjam, Sudah Kembali, Terlambat).
+Admin → Panel Pinjaman Aktif dengan data terkelompok per member.
 
-Panel Pengguna & Admin:
+🎨 UI/UX Modern
+Desain profesional dengan gradien warna elegan.
 
-Halaman "Pinjaman Saya" untuk member melacak riwayat peminjaman mereka.
+Animasi smooth scrolling.
 
-Halaman "Panel Pinjaman Aktif" untuk admin, dengan data yang dikelompokkan per member.
+Full Responsive — nyaman di desktop & mobile.
 
-Antarmuka Modern & Responsif:
+🖼 Tampilan Aplikasi
+<table> <tr> <td align="center"><b>Halaman Login</b></td> <td align="center"><b>Detail Buku</b></td> </tr> <tr> <td><img src="https://storage.googleapis.com/gemini-prod/images/image_e41fcb.jpg_bb70eb1d-c6ec-4671-8431-12d80bbf8ec1" alt="Login Page"></td> <td><img src="https://storage.googleapis.com/gemini-prod/images/image_ef7209.jpg_bb70eb1d-c6ec-4671-8431-12d80bbf8ec1" alt="Book Detail"></td> </tr> </table>
+🛠 Teknologi yang Digunakan
+Backend → Laravel 11, PHP 8.2+
 
-Desain UI yang menarik dengan gradien warna dan layout profesional.
+Frontend → Tailwind CSS, Alpine.js
 
-Animasi halus yang muncul saat pengguna melakukan scroll.
+Database → MySQL
 
-Tampilan yang sepenuhnya responsif untuk desktop dan perangkat mobile.
+Dev Environment → XAMPP / Laragon / Laravel Sail
 
-📸 Screenshot
-<table>
-<tr>
-<td align="center"><b>Halaman Login</b></td>
-<td align="center"><b>Detail Buku</b></td>
-</tr>
-<tr>
-<td><img src="https://storage.googleapis.com/gemini-prod/images/image_e41fcb.jpg_bb70eb1d-c6ec-4671-8431-12d80bbf8ec1" alt="Login Page"></td>
-<td><img src="https://storage.googleapis.com/gemini-prod/images/image_ef7209.jpg_bb70eb1d-c6ec-4671-8431-12d80bbf8ec1" alt="Book Detail"></td>
-</tr>
-</table>
-
-(Anda bisa menambahkan lebih banyak screenshot ke dalam folder proyek Anda dan menampilkannya di sini)
-
-🛠️ Teknologi yang Digunakan
-Backend: Laravel 11, PHP 8.2+
-
-Frontend: Tailwind CSS, Alpine.js
-
-Database: MySQL
-
-Lingkungan Pengembangan: XAMPP / Laragon / Laravel Sail
-
-🚀 Instalasi & Setup
-Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokal Anda.
-
-Clone repository ini:
-
-Bash
-
+🚀 Cara Instalasi
+bash
+Salin
+Edit
+# 1. Clone repository
 git clone https://github.com/USERNAME_ANDA/NAMA_REPO.git
 cd NAMA_REPO
-Install dependensi PHP & Node.js:
 
-Bash
-
+# 2. Install dependencies
 composer install
 npm install
-Siapkan file environment:
 
-Bash
-
+# 3. Copy environment file
 cp .env.example .env
-Generate application key:
 
-Bash
-
+# 4. Generate application key
 php artisan key:generate
-Konfigurasi file .env:
-Buka file .env dan atur koneksi database Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
 
-Jalankan migrasi dan seeder:
-Perintah ini akan membuat semua tabel dan mengisinya dengan data awal (akun admin, member, buku, dll).
+# 5. Konfigurasi database di file .env
 
-Bash
-
+# 6. Migrasi & seeding data awal
 php artisan migrate:fresh --seed
-Hubungkan folder storage:
 
-Bash
-
+# 7. Link storage
 php artisan storage:link
-Compile aset frontend:
 
-Bash
-
+# 8. Compile assets frontend
 npm run dev
-Jalankan server pengembangan:
 
-Bash
-
+# 9. Jalankan server
 php artisan serve
-Aplikasi sekarang berjalan di http://127.0.0.1:8000.
+Akses aplikasi di http://127.0.0.1:8000
 
 🔑 Akun Demo
-Anda dapat menggunakan akun berikut yang sudah dibuat oleh seeder untuk mencoba berbagai peran:
+Role	Email	Password
+Admin	admin@perpus.com	password
+Staff	staff@perpus.com	password
+Member	member@perpus.com	password
 
-Admin
+📝 Roadmap Fitur Selanjutnya
+ 🔍 Pencarian & filter katalog buku.
 
-Email: admin@perpus.com
+ ⏰ Sistem denda keterlambatan.
 
-Password: password
+ ⭐ Ulasan & rating buku.
 
-Staff
+ 📊 Dashboard statistik buku & aktivitas member.
 
-Email: staff@perpus.com
+ 📧 Notifikasi email untuk jatuh tempo.
 
-Password: password
-
-Member
-
-Email: member@perpus.com
-
-Password: password
-
-📝 Rencana Pengembangan
-Beberapa fitur yang dapat ditambahkan di masa mendatang:
-
-[ ] Fitur pencarian dan filter di katalog buku.
-
-[ ] Sistem denda untuk keterlambatan pengembalian.
-
-[ ] Fitur ulasan dan rating buku oleh member.
-
-[ ] Dashboard admin dengan statistik (buku terpopuler, member paling aktif, dll.).
-
-[ ] Notifikasi email saat buku akan jatuh tempo.
-
-📄 Lisensi
-Proyek ini berada di bawah Lisensi MIT.
+📜 Lisensi
+Proyek ini dirilis di bawah lisensi MIT — bebas digunakan, dimodifikasi, dan dikembangkan.
